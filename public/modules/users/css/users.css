@@ -1,0 +1,58 @@
+@media (min-width: 992px) {
+	.nav-users {
+		position: fixed;
+	}
+}
+.remove-account-container {
+	display: inline-block;
+	position: relative;
+}
+.btn-remove-account {
+	top: 10px;
+	right: 10px;
+	position: absolute;
+}
+
+.input-field{ width: 90%;}
+
+.input-icon-container{
+	width: 10%;
+	padding-top: 7px;
+	padding-bottom: 4px;
+	text-align: center;
+	font-size: 16px;
+	color: #666;
+	border-bottom: 1px solid #ddd;
+	transition: all 0.5s ease;
+}
+
+.input-field:focus + .input-icon-container{ color: #3498db; transition: all 0.5s ease; border-bottom: 1px solid #3498db;}
+
+.input-field.ng-valid.ng-dirty + .input-icon-container{ color: #2ecc71; transition: all 0.5s ease; border-bottom: 1px solid #2ecc71;}
+.input-field.ng-valid.ng-dirty:focus + .input-icon-container{ color: #2ecc71; transition: all 0.5s ease; border-bottom: 1px solid #2ecc71;}
+
+.input-field.ng-invalid.ng-dirty + .input-icon-container{ color: #e74c3c; transition: all 0.5s ease; border-bottom: 1px solid #e74c3c;}
+.input-field.ng-invalid.ng-dirty:focus + .input-icon-container{ color: #e74c3c; transition: all 0.5s ease; border-bottom: 1px solid #e74c3c;}
+
+.ng-valid.ng-dirty { border-color: #2ecc71; }
+.ng-invalid.ng-dirty { border-color: #e74c3c; }
+.sns-link{
+	width: 40px;
+	display: inline-block;
+	height: 40px;
+	border: 1px solid #ddd;
+	border-radius: 50%;
+	font-size: 20px;
+	padding-top: 5px;
+	color: #999;
+	cursor: pointer;
+	margin-left: 5px;
+  	margin-right: 5px;
+  	transition: all 0.25s ease;
+}
+
+.sns-link.google:hover{ color: #fff; background: #d34836; border: 1px solid rgba(0,0,0,0.3); transition: all 0.25s ease;}
+.sns-link.facebook:hover{ color: #fff; background: #3b5998; border: 1px solid rgba(0,0,0,0.3); transition: all 0.25s ease;}
+.sns-link.linkedin:hover{ color: #fff; background: #0077b5; border: 1px solid rgba(0,0,0,0.3); transition: all 0.25s ease;}
+
+.form-submit-button{ margin-bottom: 10px; }

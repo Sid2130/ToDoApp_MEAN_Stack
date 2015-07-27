@@ -1,0 +1,64 @@
+<section class="row" data-ng-controller="AuthenticationController">
+	
+	<div class="logo-container">
+		<img alt="MEAN.JS" class="img-responsive text-center logo" src="modules/core/img/brand/logo.png">
+	</div>
+	<!-- <div class="form-container"> -->
+	<md-card  class="form-container">
+		<form name="userForm" data-ng-submit="signup()" class="signin form-horizontal" novalidate autocomplete="off">
+			<fieldset>
+				<input type="email" autocomplete="off" style="display:none;">
+				<input type="password" autocomplete="off"  style="display:none;">
+
+				<md-input-container>
+			      	<!-- Use floating placeholder instead of label -->
+			      	<md-icon class="material-icons">grade</md-icon>
+			      	<input type="email" placeholder="First Name" ng-required="true" data-ng-model="credentials.firstName">
+			    </md-input-container>
+
+			    <md-input-container>
+			      	<!-- Use floating placeholder instead of label -->
+			      	<md-icon class="material-icons">grade</md-icon>
+			      	<input type="email" placeholder="Last Name" ng-required="true" data-ng-model="credentials.lastName">
+			    </md-input-container>
+
+
+				<md-input-container>
+			      	<!-- Use floating placeholder instead of label -->
+			      	<md-icon class="material-icons">mail</md-icon>
+			      	<input type="email" placeholder="Email (required)" ng-required="true" data-ng-model="credentials.email">
+			    </md-input-container>
+
+			    <md-input-container>
+			      	<!-- Use floating placeholder instead of label -->
+			      	<md-icon class="material-icons">vpn_key</md-icon>
+			      	<input type="password" placeholder="Password (required)" ng-required="true" data-ng-model="credentials.password">
+			    </md-input-container>
+
+
+				<div class="form-group text-center">
+					<md-button class="md-raised md-primary width-100 submit-button"> Sign Up <md-icon class="material-icons">play_circle_outline</md-icon></md-button>
+
+					<md-button href="/#!/signin" class="md-primary md-button md-default-theme"> Signin </md-button>
+				</div>
+				<div data-ng-show="error" class="text-center text-danger">
+					<strong data-ng-bind="error"></strong>
+				</div>
+			</fieldset>
+		</form>
+	</md-card>
+
+
+	<!-- <h5 class="col-md-12 text-center"><i class="fa fa-user-plus"></i> Sign up using your social accounts</h5>
+	<div class="col-md-12 text-center">
+		<a href="/auth/facebook" class="undecorated-link sns-link facebook">
+			<i class="fa fa-facebook"></i>
+		</a>
+		<a href="/auth/google" class="undecorated-link sns-link google">
+			<i class="fa fa-google-plus"></i>
+		</a>
+		<a href="/auth/linkedin" class="undecorated-link sns-link linkedin">
+			<i class="fa fa-linkedin"></i>
+		</a>
+	</div> -->
+</section>

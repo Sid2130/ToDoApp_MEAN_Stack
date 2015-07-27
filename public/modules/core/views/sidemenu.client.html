@@ -1,0 +1,86 @@
+<md-sidenav  flex md-component-id="left" class="md-whiteframe-z2" >
+	<md-list data-ng-controller="HeaderController">
+
+
+		<li class="side-menu-list"> 
+			
+			<!-- <md-grid-tile class="darkBlue"> -->
+			<div class="icon-container">
+		    	<md-icon md-svg-icon="avatar:svg-2"></md-icon>
+		    </div> 
+		      <!-- <md-grid-tile-footer>
+		        <h3>Svg-3</h3>
+		      </md-grid-tile-footer> -->
+		    <!-- </md-grid-tile> -->
+		    <div class="username">
+				{{authentication.user.firstName}} 
+			</div>
+		</li>
+		<md-divider></md-divider>
+
+		<li class="side-menu-list">
+			<md-button class="md-primary md-ink-ripple md-button width-100" ng-click="toggleUsersList()" ng-href="/#!/home">
+				<md-icon class="material-icons md-accent">home</md-icon>
+				Home
+			</md-button>
+		</li>
+
+		<md-divider></md-divider>
+		<li class="side-menu-list">
+			<md-button class="md-primary md-ink-ripple md-button width-100" ng-click="toggleUsersList()" ng-href="/#!/settings/profile">
+				<md-icon class="material-icons md-accent">mode_edit</md-icon>
+				Edit Profile
+			</md-button>
+		</li>
+
+		<li class="side-menu-list">
+			<md-button class="md-primary md-ink-ripple md-button width-100" ng-href="/#!/settings/accounts" ng-click="toggleUsersList()">
+				<md-icon class="material-icons md-accent">share</md-icon>
+				Social Accounts
+			</md-button>
+		</li class="side-menu-list">
+
+		<li class="side-menu-list">
+			<md-button class="md-primary md-ink-ripple md-button width-100" ng-href="/#!/settings/password" ng-click="toggleUsersList()">
+				<md-icon class="material-icons md-accent">vpn_key</md-icon>
+				Change Password
+			</md-button>
+		</li>
+		 <md-divider></md-divider>
+		<li class="side-menu-list">
+			<md-button class="md-primary md-ink-ripple md-button width-100" ng-href="/auth/signout" ng-click="toggleUsersList()">
+				<md-icon class="material-icons md-accent">settings_power</md-icon>
+				SignOut
+			</md-button>
+		</li>
+	  
+	 
+
+
+
+		<!-- <ul class="nav navbar-nav navbar-right" data-ng-show="authentication.user">
+			<li class="dropdown">
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+					<i class="fa fa-cogs fa-flip-horizontal"></i>
+				</a>
+				<ul class="dropdown-menu">
+					<li data-ng-bind="authentication.user.firstName"></li>
+					<li>
+						<a href="/#!/settings/profile">Edit Profile</a>
+					</li>
+					<li>
+						<a href="/#!/settings/accounts">Manage Social Accounts</a>
+					</li>
+					<li data-ng-show="authentication.user.provider === 'local'">
+						<a href="/#!/settings/password">Change Password</a>
+					</li>
+					<li class="divider"></li>
+					<li>
+						<a href="/auth/signout">Signout</a>
+					</li>
+				</ul>
+			</li>
+		</ul> -->
+	</md-list>
+</md-sidenav>
+

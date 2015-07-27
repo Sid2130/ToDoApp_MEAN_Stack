@@ -1,0 +1,202 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600,300,700);
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,500,700,300);
+
+body{
+	font-family: 'Roboto', sans-serif;
+	overflow: hidden;
+}
+
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+
+
+.side-menu-list{
+	list-style: none;
+}
+
+.side-menu-list .icon-container{
+	margin: 10px auto;
+    display: block;
+    width: 100px;
+}
+
+
+.side-menu-list .icon-container md-icon {
+    width: 100px;
+    height: 100px;
+}
+
+.side-menu-list .icon-container md-icon svg{
+	border-radius: 50%;
+}
+
+
+.side-menu-list .username{
+	font-size: 20px;
+	text-align: center;
+	width: 150px;
+	margin: 5px auto;
+}
+
+
+.side-menu-list .md-primary{
+	text-align: left;
+	margin: 0px;
+	color: #333 !important;
+	padding: 15px;
+}
+
+
+.side-menu-list .md-primary .material-icons {
+	margin-right: 15px;
+}
+
+.input-field:-webkit-autofill{
+  -webkit-box-shadow: 0px 0px 500px 500px #fff inset;
+  box-shadow: 0px 0px 500px 500px #fff inset;
+  background-image: none;
+  color: #666;
+}
+
+
+.input-field:-webkit-autofill{
+  -webkit-box-shadow: 0px 0px 500px 500px #fff inset;
+  box-shadow: 0px 0px 500px 500px #fff inset;
+  background-image: none;
+  color: #666;
+}
+
+.width-100{ width: 100% !important;}
+
+.content {
+	padding-top: 50px;
+	width: 100%;
+	height: 100vh;
+	background: #fafafa;
+	font-family: 'Open Sans', "Helvetica Neue", Helvetica, sans-serif;
+}
+
+
+.form-horizontal .form-group {
+	margin-right: 0px;
+	margin-left: 0px;
+	margin-bottom: 0px;
+}
+
+.form-container {
+	width: 95%;
+	max-width: 350px;
+	margin: 35px auto 25px;
+	padding: 20px;
+	border: 1px solid #ddd;
+	background: #fff;
+	border-radius: 3px;
+}
+
+
+
+.submit-button {
+	margin: 0px;
+}
+
+
+button.md-button{
+	color: #fff !important;
+}
+
+button.md-button .material-icons{
+	color: #fff !important;
+	margin-top: -2px;
+	font-size: 14px;
+}
+
+
+
+.logo-container {
+  margin: 0 auto;
+}
+
+.logo-container .logo {
+  display: block;
+  margin: 50px auto;
+  max-width: 200px;
+  width: 75%;
+}
+
+.main-toolbar{
+	padding: 10px 15px 0px;
+	color: #fff !important;
+	position: relative;
+}
+
+.main-toolbar .md-button {
+    color: #fff !important;
+    font-size: 20px;
+}
+
+.main-toolbar button.md-button .material-icons{
+	font-size: 29px;
+}
+
+
+.undecorated-link:hover {
+	text-decoration: none;
+}
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+	display: none !important;
+}
+.ng-invalid.ng-dirty {
+	border-color: #FA787E;
+}
+.ng-valid.ng-dirty {
+	border-color: #78FA89;
+}
+
+.add-task-button{
+	position: absolute;
+    right: 20px;
+    top: -35px;
+}
+
+button.add-task-button .material-icons{ font-size: 25px;}
+
+
+md-content.md-default-theme{ overflow: visible;}
+
+
+md-tab-content{ overflow-y: auto; overflow-x: hidden; }
+md-backdrop { top: 0px;}
+md-tabs-wrapper{ padding: 0px 10px;}
+
+.app-title{
+    padding-top: 7px;
+    font-size: 24px;
+}
+
+section.row.ng-scope{
+	height: 100vw;
+	background: #fafafa;
+}

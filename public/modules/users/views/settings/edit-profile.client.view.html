@@ -1,0 +1,57 @@
+<section class="row" data-ng-controller="SettingsController">
+	<br>
+	<h3 class="col-md-12 text-center"><i class="fa fa-pencil-square-o"></i> Edit your profile</h3>
+	<br><br>
+	<md-card  class="form-container">
+		<form name="userForm" data-ng-submit="updateUserProfile(userForm.$valid)" class="signin form-horizontal" autocomplete="off">
+			<fieldset>
+				<!-- <div class="form-group">
+					<input type="text" id="firstName" name="firstName" class="input-field pull-right form-control" data-ng-model="user.firstName" placeholder="First Name">
+					<div class="input-icon-container pull-right"><i class="fa fa-star"></i></div>
+				</div>
+				<div class="form-group">
+					<input type="text" id="lastName" name="lastName" class="input-field pull-right form-control" data-ng-model="user.lastName" placeholder="Last Name">
+					<div class="input-icon-container pull-right"><i class="fa fa-star"></i></div>
+				</div>
+			
+				<div class="form-group">
+					<input type="email" id="email" name="email" class="input-field pull-right form-control" data-ng-model="user.email" placeholder="Email">
+					<div class="input-icon-container pull-right"><i class="fa fa-envelope"></i></div>
+				</div> -->
+				
+				<md-input-container>
+			      	<!-- Use floating placeholder instead of label -->
+			      	<md-icon class="material-icons">grade</md-icon>
+			      	<input type="email" placeholder="First Name" ng-required="true" data-ng-model="user.firstName">
+			    </md-input-container>
+
+			    <md-input-container>
+			      	<!-- Use floating placeholder instead of label -->
+			      	<md-icon class="material-icons">grade</md-icon>
+			      	<input type="email" placeholder="Last Name" ng-required="true" data-ng-model="user.lastName">
+			    </md-input-container>
+
+
+				<md-input-container>
+			      	<!-- Use floating placeholder instead of label -->
+			      	<md-icon class="material-icons">mail</md-icon>
+			      	<input type="email" placeholder="Email (required)" ng-required="true" data-ng-model="user.email">
+			    </md-input-container>
+
+				<br>
+				<div data-ng-show="success" class="text-center text-success">
+					<i class="fa fa-check-square"></i> <span>Profile Saved Successfully</span>
+				</div>
+				<div data-ng-show="error" class="text-center text-danger">
+					<i class="fa fa-exclamation-triangle"></i> <span data-ng-bind="error"></span>
+				</div>
+				<br>
+				<div class="text-center form-group">
+					<!-- <button type="submit" class="button-default width-100 form-submit-button">Save Profile <i class="fa fa-floppy-o"></i></button> -->
+					<md-button class="md-raised md-primary width-100 submit-button"> Save <md-icon class="material-icons">save</md-icon></md-button>
+				</div>
+				
+			</fieldset>
+		</form>
+	</md-card>
+</section>
