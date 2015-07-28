@@ -74,6 +74,30 @@ body{
 	margin-right: 15px;
 }
 
+
+textarea.input-field{
+	min-height: 100px;
+}
+
+.input-field{
+	border: 0px;
+	border-bottom: 1px solid #ddd;
+	border-radius: 0px;
+	box-shadow: none;
+	padding: 0px 5px;
+	transition: all 0.5s ease;
+	resize:none;
+}
+
+.input-field:focus{
+	outline: none;
+	border-bottom: 2px solid #4CAF50;
+	box-shadow: none;
+	box-shadow: 0 0 500px 500px #fff inset;
+	transition: all 0.5s ease;
+
+}
+
 .input-field:-webkit-autofill{
   -webkit-box-shadow: 0px 0px 500px 500px #fff inset;
   box-shadow: 0px 0px 500px 500px #fff inset;
@@ -190,6 +214,8 @@ md-content.md-default-theme{ overflow: visible;}
 md-tab-content{ overflow-y: auto; overflow-x: hidden; }
 md-backdrop { top: 0px;}
 md-tabs-wrapper{ padding: 0px 10px;}
+
+md-dialog { min-width: 350px;}
 
 .app-title{
     padding-top: 7px;
