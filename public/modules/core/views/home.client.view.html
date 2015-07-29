@@ -24,6 +24,10 @@
 					<div ng-bind=""></div>
 					<br>
 					content Here
+
+						
+
+					dcsdcdcwefdewdcdscsdfrvdvdscsacadcrvdfcvdvdfvdfvsdcsdcscvfvrerdcsdcd
 				</div>
 			</md-tab>
 
@@ -48,7 +52,7 @@
 
 
 <script type="text/ng-template" id="dialog1.tmpl.html">
-  	<md-dialog aria-label="Mango (Fruit)">
+  	<md-dialog aria-label="Mango (Fruit)" data-ng-controller="HomeController">
 		<form>
 			
   			<md-dialog-content>
@@ -61,21 +65,29 @@
 
 			    		<textarea class="input-field width-100" placeholder="Description" data-ng-model="task.description"></textarea
 
-			    		<md-select-menu class="width-100" placeholder="Priority" data-ng-model="task.priority">
-					        <md-option value="one">One</md-option>
-					        <md-option value="two">Two</md-option>
-					        <md-option value="three">Three</md-option>
-					        <md-option value="four">Four</md-option>
-					        <md-option value="five">Five</md-option>
-					    </md-select-menu>
+			    		
+
+
+					    <div layout="">
+					      	<div layout="" layout-align=>
+					        	<span class="md-body-1"><br>Priority : </span>
+					      	</div>
+					      	<md-slider flex=""  md-discrete="" min="0" max="5" ng-model="color.red" aria-label="red" id="priority-slider" class="">
+					      	</md-slider>
+					       <!--	<div flex="20" layout="" layout-align="center center"> -->
+					        	<input type="text" ng-model="color.red" aria-label="red" aria-controls="priority-slider" class="slider-value">
+					      <!--	</div> -->
+					    </div>
+
+					    <div style="clear: both">
+					        <md-checkbox ng-model="data.cb1" aria-label="Task Completed">
+					          Task Completed: {{ data.cb1 }}
+					        </md-checkbox>
+				      	</div>
+
+			    		
 					</p>
-
-
-					
-    			</div>
-  			</md-dialog-content>
-
-			<div class="md-actions" layout="row">
+					<div class="md-actions" layout="row">
 				
 				<span flex></span>
 				<md-button ng-click="answer('not useful')" class="md-accent">
@@ -85,6 +97,12 @@
 					Useful
 				</md-button>
 			</div>
+
+					
+    			</div>
+  			</md-dialog-content>
+
+			
 		</form>
 	</md-dialog>
 </script>

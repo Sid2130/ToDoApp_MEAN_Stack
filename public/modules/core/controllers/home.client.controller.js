@@ -14,8 +14,8 @@
 
 
 angular.module('core').controller('HomeController', ['$scope', 'Authentication',  '$http', '$location', 
-	'$mdSidenav', '$mdBottomSheet', '$log', '$mdDialog',
-    function($scope, Authentication, $http, $location, $mdSidenav, $mdBottomSheet, $log, $mdDialog) {
+	'$mdSidenav', '$log', '$mdDialog',
+    function($scope, Authentication, $http, $location, $mdSidenav, $log, $mdDialog) {
         // This provides Authentication context.
         $scope.authentication = Authentication;
  
@@ -38,7 +38,7 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
 
         $scope.showAdvanced = function(ev) {
             $mdDialog.show({
-                controller: DialogController,
+               // controller: HomeController,
                 templateUrl: 'dialog1.tmpl.html',
                 parent: angular.element(document.body),
                 targetEvent: ev,
@@ -51,9 +51,7 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
         };
         
 
-
-        function DialogController($scope, $mdDialog) {
-            $scope.hide = function() {
+         $scope.hide = function() {
                 $mdDialog.hide();
             };
 
@@ -64,6 +62,19 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
             $scope.answer = function(answer) {
                 $mdDialog.hide(answer);
             };
+
+        function DialogController($scope, $mdDialog) {
+            // $scope.hide = function() {
+            //     $mdDialog.hide();
+            // };
+
+            // $scope.cancel = function() {
+            //     $mdDialog.cancel();
+            // };
+
+            // $scope.answer = function(answer) {
+            //     $mdDialog.hide(answer);
+            // };
         }
     
         var toolBarHeight = $('.main-toolbar').parent().height();

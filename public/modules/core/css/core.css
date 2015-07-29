@@ -147,7 +147,7 @@ textarea.input-field{
 }
 
 
-button.md-button{
+button.md-button.md-primary{
 	color: #fff !important;
 }
 
@@ -216,6 +216,11 @@ md-backdrop { top: 0px;}
 md-tabs-wrapper{ padding: 0px 10px;}
 
 md-dialog { min-width: 350px;}
+
+md-slider{ width: 80%; float: left;}
+md-checkbox{ margin: 0px;}
+.slider-value { width: 10%; float: right; border: 0px; border-bottom: 2px solid #DD2C00; text-align: center; font-weight: bold;
+    color: #dd2c00;}
 
 .app-title{
     padding-top: 7px;

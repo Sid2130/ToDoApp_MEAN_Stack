@@ -28,7 +28,7 @@ angular.module('users').controller('AuthenticationController', ['$scope', '$http
 
 				// And redirect to the index page
 				$location.path('/');
-				$scope.$emit('updateMenuDisplayProperty',true);
+				//$scope.$emit('updateMenuDisplayProperty',true);
 				//updateMenuDisplayProperty
 			}).error(function(response) {
 				$scope.error = response.message;
