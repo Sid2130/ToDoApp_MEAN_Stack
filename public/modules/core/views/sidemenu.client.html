@@ -3,10 +3,9 @@
 
 
 		<li class="side-menu-list"> 
-			
 			<!-- <md-grid-tile class="darkBlue"> -->
 			<div class="icon-container">
-		    	<md-icon md-svg-icon="avatar:svg-2"></md-icon>
+		    	<md-icon md-svg-icon="{{'avatar:svg-'+authentication.user.avatarCode}}"></md-icon>
 		    </div> 
 		      <!-- <md-grid-tile-footer>
 		        <h3>Svg-3</h3>
@@ -15,6 +14,9 @@
 		    <div class="username">
 				{{authentication.user.firstName}} 
 			</div>
+
+			
+
 		</li>
 		<md-divider></md-divider>
 

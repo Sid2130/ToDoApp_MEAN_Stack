@@ -53,14 +53,15 @@
 
 <script type="text/ng-template" id="dialog1.tmpl.html">
   	<md-dialog aria-label="Mango (Fruit)" data-ng-controller="HomeController">
-		<form>
-			
+		<form data-ng-submit="getTaskData()">
   			<md-dialog-content>
     			<div>
 					<p>
+						<input id="userid" type="text" data-ng-model="task.user" ng-value="" style="display: none;">
+						<input id="useremail" type="text" data-ng-model="task.userEmail" ng-value="" style="display: none;">
 						<md-input-container>
 			      	      	<md-icon class="material-icons">view_agenda</md-icon>
-			      			<input type="Text" placeholder="Title" ng-required="true" data-ng-model="task.title" role="textbox" value="Here is some text">
+			      			<input type="Text" autofocus="true" placeholder="Title" ng-required="true" data-ng-model="task.title" role="textbox" value="Here is some text">
 			    		</md-input-container>
 
 			    		<textarea class="input-field width-100" placeholder="Description" data-ng-model="task.description"></textarea
@@ -72,16 +73,16 @@
 					      	<div layout="" layout-align=>
 					        	<span class="md-body-1"><br>Priority : </span>
 					      	</div>
-					      	<md-slider flex=""  md-discrete="" min="0" max="5" ng-model="color.red" aria-label="red" id="priority-slider" class="">
+					      	<md-slider flex=""  md-discrete="" min="1" max="5" data-ng-model="task.priority" aria-label="red" id="priority-slider" class="">
 					      	</md-slider>
 					       <!--	<div flex="20" layout="" layout-align="center center"> -->
-					        	<input type="text" ng-model="color.red" aria-label="red" aria-controls="priority-slider" class="slider-value">
+					        	<input type="text" aria-label="red" aria-controls="priority-slider" value="0" class="slider-value" data-ng-model="task.priority">
 					      <!--	</div> -->
 					    </div>
 
 					    <div style="clear: both">
-					        <md-checkbox ng-model="data.cb1" aria-label="Task Completed">
-					          Task Completed: {{ data.cb1 }}
+					        <md-checkbox  aria-label="Task Completed" ng-init="task.status=false" ng-true-value="true" ng-false-value="false">
+					          Task Completed
 					        </md-checkbox>
 				      	</div>
 
@@ -90,19 +91,17 @@
 					<div class="md-actions" layout="row">
 				
 				<span flex></span>
-				<md-button ng-click="answer('not useful')" class="md-accent">
-					Not Useful
+				<md-button ng-click="addTask()" class="md-primary md-button md-raised" type="submit">
+					Add
 				</md-button>
-				<md-button ng-click="answer('useful')" class="md-accent">
-					Useful
+				<md-button ng-click="cancel()" class="md-button md-accent md-raised">
+					Cancel
 				</md-button>
 			</div>
 
 					
     			</div>
   			</md-dialog-content>
-
-			
 		</form>
 	</md-dialog>
 </script>

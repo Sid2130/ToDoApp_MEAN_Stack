@@ -21,6 +21,12 @@ var validateLocalStrategyPassword = function(password) {
 	return (this.provider !== 'local' || (password && password.length > 6));
 };
 
+
+var validateAvatarIndex = function(avatarIndex){
+	return (avatarIndex > 0 && avatarIndex <= 16);
+}
+
+
 /**
  * User Schema
  */
@@ -56,6 +62,11 @@ var UserSchema = new Schema({
 	provider: {
 		type: String,
 		required: 'Provider is required'
+	},
+	avatarCode: {
+		type: Number,
+		default: 11,
+		validate: [validateAvatarIndex, 'Avatar code should be between 1 to 16']
 	},
 	updated: {
 		type: Date,

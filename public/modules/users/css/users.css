@@ -56,3 +56,18 @@
 .sns-link.linkedin:hover{ color: #fff; background: #0077b5; border: 1px solid rgba(0,0,0,0.3); transition: all 0.25s ease;}
 
 .form-submit-button{ margin-bottom: 10px; }
+
+
+
+/* modal css for avatars*/
+
+.md-dialog-container .icon-container {
+    float: left;
+    width: 23%;
+    text-align: center;
+    margin: 10px 1%;
+}
+
+.md-dialog-container .icon-container md-icon{ width: 75px; height: 75px;}
+.md-dialog-container .icon-container md-icon svg { pointer-events: none; border-radius: 50%; }
+.md-dialog-container .avatars-container{ max-height: 350px; overflow: auto;}

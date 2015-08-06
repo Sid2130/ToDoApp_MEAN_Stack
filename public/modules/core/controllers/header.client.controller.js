@@ -6,7 +6,10 @@ angular.module('core').controller('HeaderController', ['$scope', 'Authentication
 		$scope.isCollapsed = false;
 		$scope.menu = Menus.getMenu('topbar');
 
-		console.log(Authentication);
+		
+
+  		$scope.taskUser = $scope.authentication.user._id;
+        $scope.taskUserEmail = $scope.authentication.user.email;
 
 		$scope.toggleCollapsibleMenu = function() {
 			$scope.isCollapsed = !$scope.isCollapsed;
@@ -19,7 +22,7 @@ angular.module('core').controller('HeaderController', ['$scope', 'Authentication
 
 		
 		$scope.signout = function(){
-			$location.path("/auth/signout");
+			$location.path('/auth/signout');
 		};
 
 		$scope.toggleUsersList =function() {

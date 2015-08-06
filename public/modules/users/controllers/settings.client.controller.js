@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('users').controller('SettingsController', ['$scope', '$http', '$location', 'Users', 'Authentication',
-	function($scope, $http, $location, Users, Authentication) {
+angular.module('users').controller('SettingsController', ['$scope', '$http', '$location', 'Users', 'Authentication', '$mdDialog', '$mdGridLayout',
+	function($scope, $http, $location, Users, Authentication, $mdDialog, $mdGridLayout) {
 		$scope.user = Authentication.user;
 
 		// If user is not signed in then redirect back home
@@ -67,5 +67,30 @@ angular.module('users').controller('SettingsController', ['$scope', '$http', '$l
 				$scope.error = response.message;
 			});
 		};
+
+
+		$scope.showAvatarDialog = function(ev) {
+            $mdDialog.show({
+               // controller: HomeController,
+                templateUrl: 'avatar.tmpl.html',
+                parent: angular.element(document.body),
+                targetEvent: ev,
+            })
+            .then(function(answer) {
+                $scope.alert = 'You said the information was "' + answer + '".';
+            }, function() {
+                $scope.alert = 'You cancelled the dialog.';
+            });
+        };
+
+
+
+        $scope.hide = function() {
+            $mdDialog.hide();
+        };
+
+        $scope.cancel = function() {
+            $mdDialog.cancel();
+        };
 	}
 ]);

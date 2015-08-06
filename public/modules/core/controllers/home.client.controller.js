@@ -18,7 +18,9 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
     function($scope, Authentication, $http, $location, $mdSidenav, $log, $mdDialog) {
         // This provides Authentication context.
         $scope.authentication = Authentication;
- 
+    
+        
+
  		if(!(Authentication.user)){
  		// 	$scope.$apply(function() {
 	  //       	$location.path('/signin');
@@ -28,9 +30,22 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
         	$location.path('/signin');
         }
         
+
+
+
+        $scope.task = {
+            user : $scope.authentication.user._id,
+            userEmail : $scope.authentication.user.email
+        };
+
+
         /**
          * Hide or Show the 'left' sideNav area
          */
+
+
+
+
         function toggleUsersList() {
             $mdSidenav('left').toggle();
         }
@@ -51,37 +66,40 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
         };
         
 
-         $scope.hide = function() {
-                $mdDialog.hide();
-            };
+        $scope.hide = function() {
+            $mdDialog.hide();
+        };
 
-            $scope.cancel = function() {
-                $mdDialog.cancel();
-            };
+        $scope.cancel = function() {
+            $mdDialog.cancel();
+        };
 
-            $scope.answer = function(answer) {
-                $mdDialog.hide(answer);
-            };
-
-        function DialogController($scope, $mdDialog) {
-            // $scope.hide = function() {
-            //     $mdDialog.hide();
-            // };
-
-            // $scope.cancel = function() {
-            //     $mdDialog.cancel();
-            // };
-
-            // $scope.answer = function(answer) {
-            //     $mdDialog.hide(answer);
-            // };
+        $scope.postTaskData = function(){
+            $http.post('/tasks', $scope.task).success(function(response) {
+                console.log('in succ');
+                console.log(response);
+            }).error(function(response) {
+                $scope.error = response.message;
+            });
         }
-    
+
+
+        $scope.addTask = function(){
+            console.log($scope.task.priority);
+            if( $scope.task.priority === undefined){
+                $scope.task.priority = 5;
+            }
+            console.log($scope.task);
+           // $scope.postTaskData();
+            $mdDialog.hide();
+        }
+
+        
         var toolBarHeight = $('.main-toolbar').parent().height();
         var tabHeaderHeight = $('md-tabs-wrapper').height();
         var documentHeight = $(document).height();
         var contentHeight = documentHeight - (tabHeaderHeight + toolBarHeight);
-        $('md-tab-content').css("height",contentHeight+"px");
+        $('md-tab-content').css('height',contentHeight+'px');
  
         var self = this;
         self.selected     = null;
