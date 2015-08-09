@@ -7,7 +7,9 @@ module.exports = function(app) {
 	// Tasks Routes
 	app.route('/tasks')
 		.get(tasks.list)
-		.post(users.requiresLogin, tasks.create);
+		.post(tasks.create);
+		//.post(users.requiresLogin, tasks.create);
+		
 
 	app.route('/tasks/:taskId')
 		.get(tasks.read)

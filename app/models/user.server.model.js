@@ -24,7 +24,7 @@ var validateLocalStrategyPassword = function(password) {
 
 var validateAvatarIndex = function(avatarIndex){
 	return (avatarIndex > 0 && avatarIndex <= 16);
-}
+};
 
 
 /**

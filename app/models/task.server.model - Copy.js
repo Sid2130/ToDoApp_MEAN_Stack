@@ -4,10 +4,12 @@
  * Module dependencies.
  */
 var mongoose = require('mongoose'),
-	Schema = mongoose.Schema;
+	Schema = mongoose.Schema,
+	crypto = require('crypto');
+
 
 function validateNotEmpty(passedString){
-	return passedString !== '';
+	return passedString === '';
 }
 
 function validatePriorityRange(passedValue){
@@ -18,7 +20,7 @@ function validatePriorityRange(passedValue){
 }
 
 /**
- * Task Schema
+ * task Schema
  */
 var TaskSchema = new Schema({
 	title: {
@@ -39,7 +41,7 @@ var TaskSchema = new Schema({
 		default: 5,
 		validate: [validatePriorityRange, 'Priority should be between 1 to 5']
 	},
-	status: {
+	completed: {
 		type: Boolean,
 		default: false
 	},
@@ -49,7 +51,7 @@ var TaskSchema = new Schema({
 		required: true,
 	},
 
-	userEmail: {
+	taskUserEmail: {
 		type: String,
 		required: true,
 	},
@@ -59,4 +61,6 @@ var TaskSchema = new Schema({
 	}
 });
 
-mongoose.model('Task', TaskSchema);
+
+
+//mongoose.model('Task', TaskSchema);

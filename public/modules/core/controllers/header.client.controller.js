@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('core').controller('HeaderController', ['$scope', 'Authentication', 'Menus', '$mdSidenav', '$mdGridLayout',
-	function($scope, Authentication, Menus, $mdSidenav, $mdGridLayout) {
+angular.module('core').controller('HeaderController', ['$scope', 'Authentication', 'Menus', '$mdSidenav', '$mdGridLayout', '$location',
+	function($scope, Authentication, Menus, $mdSidenav, $mdGridLayout, $location) {
 		$scope.authentication = Authentication;
 		$scope.isCollapsed = false;
 		$scope.menu = Menus.getMenu('topbar');

@@ -14,46 +14,117 @@
         <!-- <p>{{ul.selected.content}}</p> -->
         <md-button class="md-fab md-accent add-task-button" ng-click="showAdvanced($event)">
             <md-icon >add</md-icon>
-            <md-tooltip>
-	          Add Task
-	        </md-tooltip>
+            <md-tooltip> Add Task </md-tooltip>
         </md-button>
-		<md-tabs md-selected="selectedIndex" md-border-bottom="" md-autoselect="">
-			<md-tab  md-center-tabs="true" label="All" class="tab-header">
-				<div class="demo-tab tab" >
-					<div ng-bind=""></div>
-					<br>
-					content Here
 
-						
+        <!-- <div class="tabs-container">
+			<md-tabs md-selected="selectedIndex" md-border-bottom="" md-autoselect="">
+				<md-tab  md-center-tabs="true" label="All" class="tab-header">
+					<div class="demo-tab tab" >
+						<div ng-bind=""></div>
+						<br>
+							<div class="cards" ng-repeat="task in allTasks">
+								<md-card >
+									<div class="task-title" ng-bind="task.title"></div>
+									<div class="task-description" ng-bind-html="task.description"></div>
+									<div class="task-priority-indicator"  ng-repeat="i in taskPriorityIndidcator(task.priority) track by $index" ></div>
+									<div class="clearfix"></div>
+									<div class="action-panel">
+										<div class="action-button pull-left"><i class="fa fa-trash-o"></i></div>
+										<div class="action-button pull-left"><i class="fa fa-pencil"></i></div>
+										<input type="checkbox" class="custom-checkbox" ng-true-value="'complete'" ng-false-value="'incomplete'"  ng-attr-id="{{ 'task-id-'+task.taskId }}">
+										<label class="task-finished-button pull-right" ng-attr-for="{{ 'task-id-'+task.taskId }}"></label>
+										<div class="clearfix"></div>
+									</div>
+								</md-card>
+							</div>
+					</div>
+				</md-tab>
 
-					dcsdcdcwefdewdcdscsdfrvdvdscsacadcrvdfcvdvdfvdfvsdcsdcscvfvrerdcsdcd
+				<md-tab md-center-tabs="true"  label="Incomplete" class="tab-header">
+					<div class="demo-tab tab" >
+						<div ng-bind=""></div>
+						<br>
+						<md-button class="md-primary md-raised" ng-click="removeTab( tab )" ng-disabled="tabs.length <= 1">Remove Tab</md-button>
+					</div>
+				</md-tab>
+
+				<md-tab md-center-tabs="true"  label="Completed" class="tab-header">
+					<div class="demo-tab tab" >
+						<div ng-bind=""></div>
+						<br>
+						<md-button class="md-primary md-raised" ng-click="removeTab( tab )" ng-disabled="tabs.length <= 1">Remove Tab</md-button>
+					</div>
+				</md-tab>
+			</md-tabs>
+		</div>
+    </md-content> -->
+
+
+
+
+
+    <div class="tabs-container">
+	  <md-content>
+	    <md-tabs md-dynamic-height="" md-border-bottom="">
+	      <md-tab label="All" class="tab-header">
+	        <div class="tabs-content" tabs>
+	        <md-content class="">
+				<div class="cards task-card" ng-repeat="task in allTasks">
+					<md-card class="{{'priority_'+ task.priority}} ">
+						<div class="task-title" ng-bind="task.title"></div>
+						<div class="task-description" ng-bind-html="task.description"></div>
+						<div class="task-priority-indicator"  ng-repeat="i in taskPriorityIndidcator(task.priority) track by $index" ></div>
+						<div class="clearfix"></div>
+						<div class="action-panel">
+
+							<div class="action-button pull-left">
+								<md-icon>
+									mode_edit
+									<md-tooltip> Edit </md-tooltip>
+								</md-icon>
+							</div>
+							<div class="action-button pull-left">
+								<md-icon >
+									delete
+									<md-tooltip> Delete </md-tooltip>
+								</md-icon>
+							</div>
+							<input type="checkbox" class="custom-checkbox" ng-true-value="'complete'" ng-false-value="'incomplete'"  ng-attr-id="{{ 'task-id-'+task.taskId }}">
+							<label class="task-finished-button pull-right" ng-attr-for="{{ 'task-id-'+task.taskId }}"></label>
+							<div class="clearfix"></div>
+						</div>
+					</md-card>
 				</div>
-			</md-tab>
-
-			<md-tab md-center-tabs="true"  label="Incomplete" class="tab-header">
-				<div class="demo-tab tab" >
-					<div ng-bind=""></div>
-					<br>
-					<md-button class="md-primary md-raised" ng-click="removeTab( tab )" ng-disabled="tabs.length <= 1">Remove Tab</md-button>
-				</div>
-			</md-tab>
-
-			<md-tab md-center-tabs="true"  label="Completed" class="tab-header">
-				<div class="demo-tab tab" >
-					<div ng-bind=""></div>
-					<br>
-					<md-button class="md-primary md-raised" ng-click="removeTab( tab )" ng-disabled="tabs.length <= 1">Remove Tab</md-button>
-				</div>
-			</md-tab>
-		</md-tabs>
-    </md-content>
+	        </md-content>
+	        </div>
+	      </md-tab>
+	      <md-tab label="Incomplete" class="tab-header">
+	        <div class="tabs-content" tabs>
+	        <md-content class="md-padding">
+	          <h1 class="md-display-2">Tab Two</h1>
+	          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante augue. Phasellus volutpat neque ac dui mattis vulputate. Etiam consequat aliquam cursus. In sodales pretium ultrices. Maecenas lectus est, sollicitudin consectetur felis nec, feugiat ultricies mi. Aliquam erat volutpat. Nam placerat, tortor in ultrices porttitor, orci enim rutrum enim, vel tempor sapien arcu a tellus. Vivamus convallis sodales ante varius gravida. Curabitur a purus vel augue ultrices ultricies id a nisl. Nullam malesuada consequat diam, a facilisis tortor volutpat et. Sed urna dolor, aliquet vitae posuere vulputate, euismod ac lorem. Sed felis risus, pulvinar at interdum quis, vehicula sed odio. Phasellus in enim venenatis, iaculis tortor eu, bibendum ante. Donec ac tellus dictum neque volutpat blandit. Praesent efficitur faucibus risus, ac auctor purus porttitor vitae. Phasellus ornare dui nec orci posuere, nec luctus mauris semper.</p>
+	          <p>Morbi viverra, ante vel aliquet tincidunt, leo dolor pharetra quam, at semper massa orci nec magna. Donec posuere nec sapien sed laoreet. Etiam cursus nunc in condimentum facilisis. Etiam in tempor tortor. Vivamus faucibus egestas enim, at convallis diam pulvinar vel. Cras ac orci eget nisi maximus cursus. Nunc urna libero, viverra sit amet nisl at, hendrerit tempor turpis. Maecenas facilisis convallis mi vel tempor. Nullam vitae nunc leo. Cras sed nisl consectetur, rhoncus sapien sit amet, tempus sapien.</p>
+	          <p>Integer turpis erat, porttitor vitae mi faucibus, laoreet interdum tellus. Curabitur posuere molestie dictum. Morbi eget congue risus, quis rhoncus quam. Suspendisse vitae hendrerit erat, at posuere mi. Cras eu fermentum nunc. Sed id ante eu orci commodo volutpat non ac est. Praesent ligula diam, congue eu enim scelerisque, finibus commodo lectus.</p>
+	          </md-content></div>
+	      </md-tab>
+	      <md-tab label="Completed" class="tab-header">
+	      	<div class="tabs-content" tabs>
+	        <md-content class="md-padding">
+	          <h1 class="md-display-2">Tab Three</h1>
+	          <p>Integer turpis erat, porttitor vitae mi faucibus, laoreet interdum tellus. Curabitur posuere molestie dictum. Morbi eget congue risus, quis rhoncus quam. Suspendisse vitae hendrerit erat, at posuere mi. Cras eu fermentum nunc. Sed id ante eu orci commodo volutpat non ac est. Praesent ligula diam, congue eu enim scelerisque, finibus commodo lectus.</p>
+	        </md-content>
+	        </div>
+	      </md-tab>
+	    </md-tabs>
+	  </md-content>
+	</div>
 </div>
 
 
 <script type="text/ng-template" id="dialog1.tmpl.html">
-  	<md-dialog aria-label="Mango (Fruit)" data-ng-controller="HomeController">
-		<form data-ng-submit="getTaskData()">
+  	<md-dialog aria-label="Mango (Fruit)" data-ng-controller="PopUpController">
+		<form data-ng-submit="addTask()">
   			<md-dialog-content>
     			<div>
 					<p>
@@ -91,10 +162,10 @@
 					<div class="md-actions" layout="row">
 				
 				<span flex></span>
-				<md-button ng-click="addTask()" class="md-primary md-button md-raised" type="submit">
+				<md-button ng-click="" class="md-primary md-button md-raised" type="submit">
 					Add
 				</md-button>
-				<md-button ng-click="cancel()" class="md-button md-accent md-raised">
+				<md-button ng-click="cancel()" class="md-button md-accent md-raised" type="button">
 					Cancel
 				</md-button>
 			</div>

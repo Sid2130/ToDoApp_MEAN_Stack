@@ -13,7 +13,11 @@ var mongoose = require('mongoose'),
  */
 exports.create = function(req, res) {
 	var task = new Task(req.body);
-	task.user = req.user;
+
+	console.log(JSON.stringify(req.body));
+	console.log(req.user);
+
+	//task.user = req.user;
 
 	task.save(function(err) {
 		if (err) {
