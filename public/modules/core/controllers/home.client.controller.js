@@ -23,7 +23,25 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
         	$location.path('/signin');
         }
         
+        $scope.initializeMasonry = function() {
+           // console.log("efwfwfwfwf");
+           //$timeout(function(){
+            //    angular.element('.tabs-container').masonry({
+            //     itemSelector: '.task-card',
+            //     isAnimated: true
+            //     //columnWidth: 200
+            // }); 
+            //}, 500);  
 
+            var elem = document.querySelector('.task-card-grids');
+            var msnry = new Masonry( elem, {
+              // options
+              itemSelector: '.task-card',
+              isAnimated: true
+              //columnWidth: 200
+            });
+
+        };
         
 
         $scope.showAdvanced = function(ev) {

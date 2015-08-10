@@ -21,9 +21,9 @@ angular.module('core').directive('tabs', [
 			 //    var documentHeight = document.documentElement.clientHeight;
 			 //    var contentHeight = documentHeight - (tabHeaderHeight + toolBarHeight);
 			    console.log(toolBarHeight +" ====" +tabHeaderHeight+" ====" +documentHeight +" ====" +contentHeight);
-			    angular.element('.tabs-content').css('height',contentHeight+'px');
+			    angular.element('md-content.outer-contents').css('height',contentHeight+'px');
 			    //angular.element('.tabs-content').css('height','500px');
-			    
+			    angular.element('md-content.outer-contents').niceScroll();
 			}
 		};
 	}

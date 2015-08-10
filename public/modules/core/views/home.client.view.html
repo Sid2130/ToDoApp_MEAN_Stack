@@ -69,34 +69,37 @@
 	    <md-tabs md-dynamic-height="" md-border-bottom="">
 	      <md-tab label="All" class="tab-header">
 	        <div class="tabs-content" tabs>
-	        <md-content class="">
-				<div class="cards task-card" ng-repeat="task in allTasks">
-					<md-card class="{{'priority_'+ task.priority}} ">
-						<div class="task-title" ng-bind="task.title"></div>
-						<div class="task-description" ng-bind-html="task.description"></div>
-						<div class="task-priority-indicator"  ng-repeat="i in taskPriorityIndidcator(task.priority) track by $index" ></div>
-						<div class="clearfix"></div>
-						<div class="action-panel">
+		        <md-content class="outer-contents" >
+		        	<div class="task-card-grids" layout="row" layout-sm="column" layout-wrap>
+						<div class="cards task-card" ng-repeat="task in allTasks" on-finish-render="initializeMasonry()" flex='20' flex-sm='100' flex-gt-sm='50' flex-gt-md='25' layout-margin layout-fill layout-padding >
+							<div data-task-card="" task-data="task" class="task-card-element"></div>  
+							<!-- <md-card class="{{'priority_'+ task.priority}} ">
+								<div class="task-title" ng-bind="task.title"></div>
+								<div class="task-description" ng-bind-html="task.description"></div>
+								<div class="task-priority-indicator"  ng-repeat="i in taskPriorityIndidcator(task.priority) track by $index" ></div>
+								<div class="clearfix"></div>
+								<div class="action-panel">
 
-							<div class="action-button pull-left">
-								<md-icon>
-									mode_edit
-									<md-tooltip> Edit </md-tooltip>
-								</md-icon>
-							</div>
-							<div class="action-button pull-left">
-								<md-icon >
-									delete
-									<md-tooltip> Delete </md-tooltip>
-								</md-icon>
-							</div>
-							<input type="checkbox" class="custom-checkbox" ng-true-value="'complete'" ng-false-value="'incomplete'"  ng-attr-id="{{ 'task-id-'+task.taskId }}">
-							<label class="task-finished-button pull-right" ng-attr-for="{{ 'task-id-'+task.taskId }}"></label>
-							<div class="clearfix"></div>
+									<div class="action-button pull-left">
+										<md-icon>
+											mode_edit
+											<md-tooltip> Edit </md-tooltip>
+										</md-icon>
+									</div>
+									<div class="action-button pull-left">
+										<md-icon >
+											delete
+											<md-tooltip> Delete </md-tooltip>
+										</md-icon>
+									</div>
+									<input type="checkbox" class="custom-checkbox" ng-true-value="'complete'" ng-false-value="'incomplete'"  ng-attr-id="{{ 'task-id-'+task.taskId }}">
+									<label class="task-finished-button pull-right" ng-attr-for="{{ 'task-id-'+task.taskId }}"></label>
+									<div class="clearfix"></div>
+								</div>
+							</md-card> -->
 						</div>
-					</md-card>
-				</div>
-	        </md-content>
+					</div>
+		        </md-content>
 	        </div>
 	      </md-tab>
 	      <md-tab label="Incomplete" class="tab-header">

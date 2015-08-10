@@ -1,0 +1,24 @@
+<md-card class="{{'priority_'+ taskData.priority}} ">
+	<div class="task-title" ng-bind="taskData.title"></div>
+	<div class="task-description" ng-bind-html="taskData.description"></div>
+	<div class="task-priority-indicator"  ng-repeat="i in taskPriorityIndidcator(taskData.priority) track by $index" ></div>
+	<div class="clearfix"></div>
+	<div class="action-panel">
+
+		<div class="action-button pull-left">
+			<md-icon>
+				mode_edit
+				<md-tooltip> Edit </md-tooltip>
+			</md-icon>
+		</div>
+		<div class="action-button pull-left">
+			<md-icon >
+				delete
+				<md-tooltip> Delete </md-tooltip>
+			</md-icon>
+		</div>
+		<input type="checkbox" class="custom-checkbox" ng-true-value="'complete'" ng-false-value="'incomplete'"  ng-attr-id="{{ 'task-id-'+taskData.taskId }}">
+		<label class="task-finished-button pull-right" ng-attr-for="{{ 'task-id-'+taskData.taskId }}"></label>
+		<div class="clearfix"></div>
+	</div>
+</md-card>

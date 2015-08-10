@@ -34,7 +34,9 @@ module.exports = {
 				'public/lib/angular-sanitize/angular-sanitize.js', 
 				'public/lib/angular-ui-router/release/angular-ui-router.js',
 				'public/lib/angular-ui-utils/ui-utils.js',
-				'public/lib/angular-bootstrap/ui-bootstrap-tpls.js'
+				'public/lib/angular-bootstrap/ui-bootstrap-tpls.js',
+				'public/lib/masonry/dist/masonry.pkgd.min.js',
+				'public/lib/nicescroll/jquery.nicescroll.min.js'
 			]
 		},
 		css: [
