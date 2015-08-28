@@ -71,3 +71,6 @@
 .md-dialog-container .icon-container md-icon{ width: 75px; height: 75px;}
 .md-dialog-container .icon-container md-icon svg { pointer-events: none; border-radius: 50%; }
 .md-dialog-container .avatars-container{ max-height: 350px; overflow: auto;}
+
+
+.avatar-dialog .md-actions { padding: 15px 0px 0px; }

@@ -53,9 +53,12 @@ var TaskSchema = new Schema({
 		type: String,
 		required: true,
 	},
-	updated: {
+	created: {
 		type: Date,
 		default: Date.now
+	},
+	updated: {
+		type: Date
 	}
 });
 

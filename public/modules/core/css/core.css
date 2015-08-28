@@ -7,6 +7,7 @@ body{
 }
 
 
+
 .material-icons {
   font-family: 'Material Icons';
   font-weight: normal;
@@ -250,7 +251,7 @@ md-tooltip .md-background {    background-color: rgba(0,0,0,1) !important;}
 .task-card .action-panel {
     /* font-size: 7px; */
     border-top: 1px solid rgba(0,0,0,0.5);
-    padding-top: 5px;
+    padding-top: 10px;
 }
 
 .task-card md-card{
@@ -295,4 +296,32 @@ md-card.priority_4{
 md-card.priority_5{
 	background: #4CAF50;
 	border: 1px solid #33691E;
+}
+
+
+.action-panel md-checkbox.md-checked .md-icon {
+    background-color: rgba(0,0,0,0.3) !important;
+}
+.action-panel md-checkbox{
+	line-height: none;
+}
+
+
+#avatar-id{ width: 80%;}
+
+.md-button.md-icon-button.avatar-list{
+	position: absolute;
+	right: -15px;
+	top: 15px;
+}
+
+.md-button.md-icon-button.avatar-list md-icon{
+	font-size: 22px;
+	color: #00C853 !important;
+}
+
+.task-card-element .contenteditable{
+	padding: 5px;
+	border: 1px solid #fff;
+	transition: all 0.25s ease;
 }

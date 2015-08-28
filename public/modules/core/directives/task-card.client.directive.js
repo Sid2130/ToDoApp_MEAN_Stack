@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('core').directive('taskCard', [
-	function() {
+angular.module('core').directive('taskCard', ['$compile', '$parse',
+	function($compile, $parse) {
 		return {
 			//template: '<div></div>',
 			restrict: 'A',
@@ -11,17 +11,20 @@ angular.module('core').directive('taskCard', [
 			},
 			//templateUrl: '../views/taskCard.html',
 			templateUrl: 'modules/core/directives/templates/taskCard.html',
-			link: function postLink(scope, element, attrs) {
+			link: function(scope, element, attrs) {
 				// Task card directive logic
 				// ...
-
-				
+				// scope.$watch(attrs.content, function() {
+					// element.html($parse(attrs.content)(scope));
+					//$compile(element.contents())(scope);
+					//$compile( angular.element('.task-card-element'))(scope);
+				// });
 			}
 		};
 	}
 ]);
 
-angular.module('core').directive("onFinishRender", function($timeout){
+angular.module('core').directive('onFinishRender', function($timeout){
 	return {
         restrict: 'A',
         link: function (scope, element, attr) {
@@ -29,5 +32,5 @@ angular.module('core').directive("onFinishRender", function($timeout){
                 scope.$evalAsync(attr.onFinishRender);
             }
         }
-    }
+    };
 });

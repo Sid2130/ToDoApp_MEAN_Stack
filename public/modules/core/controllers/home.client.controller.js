@@ -13,11 +13,13 @@
 // ]);
 
 
-angular.module('core').controller('HomeController', ['$scope', 'Authentication',  '$http', '$location', 
-	'$mdSidenav', '$log', '$mdDialog',
-    function($scope, Authentication, $http, $location, $mdSidenav, $log, $mdDialog) {
+angular.module('core').controller('HomeController', ['$scope', 'Authentication',  '$http', '$location', 'Taskservice', 
+	'$mdSidenav', '$log', '$mdDialog', '$compile',
+    function($scope, Authentication, $http, $location, Taskservice, $mdSidenav, $log, $mdDialog, $compile) {
         
         $scope.authentication = Authentication;
+       
+        //console.log(Authentication.user._id);
  		if(!(Authentication.user)){
             console.log($location);
         	$location.path('/signin');
@@ -40,6 +42,7 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
               isAnimated: true
               //columnWidth: 200
             });
+            $compile( angular.element('.task-card-element .action-buttons'))($scope);
 
         };
         
@@ -67,19 +70,33 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
         };
 
        
-        $scope.allTasks = '';
-        $scope.getAllTask = function(){
-            $http.get('/tasks', $scope.task).success(function(response) {
-                console.log('in succ');
-                console.log(response);
+        $scope.allTasks = [];
+        $scope.getAllTask = function(){  
+            Taskservice.getAllTask($scope.authentication.user._id).success(function(response) {
                 $scope.allTasks = response;
+                Taskservice.getAllTasksObject = response;
+
+                $scope.allTasks = Taskservice.getAllTasksObject;   
+                console.log(Taskservice.getAllTasksObject);
             }).error(function(response) {
                 $scope.error = response.message;
             });
+            
         };
+
         $scope.getAllTask();
         
-   
+
+        $scope.editThisTask = function(htmlObject){
+            console.log(htmlObject);
+            var currentTaskCard = angular.element(htmlObject).parents('.task-card-element');
+            console.log(currentTaskCard);
+            angular.element('.task-title, .task-description',currentTaskCard).addClass('contenteditable').prop('contenteditable',true);
+        };
+
+        $scope.deleteThisTask = function(htmlObject){
+            console.log('delete called');
+        };
 
         var self = this;
         self.selected     = null;

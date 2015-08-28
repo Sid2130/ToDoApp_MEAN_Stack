@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('users').controller('SettingsController', ['$scope', '$http', '$location', 'Users', 'Authentication', '$mdDialog', '$mdGridLayout',
-	function($scope, $http, $location, Users, Authentication, $mdDialog, $mdGridLayout) {
+angular.module('users').controller('SettingsController', ['$scope', '$http', '$location', 'Users', 'Authentication', '$mdDialog', '$mdGridLayout','$window',
+	function($scope, $http, $location, Users, Authentication, $mdDialog, $mdGridLayout, $window) {
 		$scope.user = Authentication.user;
 
 		// If user is not signed in then redirect back home
@@ -39,14 +39,22 @@ angular.module('users').controller('SettingsController', ['$scope', '$http', '$l
 		};
 
 		// Update a user profile
+		var objToSend = {};
 		$scope.updateUserProfile = function(isValid) {
+
+			objToSend = $scope.user;
+
+        	objToSend.avatarCode = parseInt(angular.element('#avatar-id').val());
+
 			if (isValid) {
 				$scope.success = $scope.error = null;
-				var user = new Users($scope.user);
-
+				var user = new Users(objToSend);
+				console.log(objToSend);
 				user.$update(function(response) {
 					$scope.success = true;
 					Authentication.user = response;
+					$window.location.href = "/";
+
 				}, function(response) {
 					$scope.error = response.data.message;
 				});
@@ -84,6 +92,11 @@ angular.module('users').controller('SettingsController', ['$scope', '$http', '$l
         };
 
 
+        $scope.setAvatar = function(avatarIndex){
+        	angular.element('#avatar-id').val(avatarIndex);
+        	//$scope.user.avatarCode = parseInt(avatarIndex);
+        	$scope.cancel();
+        };
 
         $scope.hide = function() {
             $mdDialog.hide();
